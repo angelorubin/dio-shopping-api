@@ -2,8 +2,8 @@ import { getCustomRepository } from "typeorm";
 import { MessagesRepository } from "../repository/MessagesRepository";
 
 interface IMessage {
-    email: string;
-    message: string
+	email: string;
+	message: string;
 }
 
 class CreateMessageService {
