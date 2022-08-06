@@ -1,7 +1,7 @@
 import { Router, Request, Response } from "express";
-import { CreateMessageController } from "./controllers/CreateMessageController";
-import { ListMessageController } from "./controllers/ListMessageController";
-import { DeleteMessageController } from "./controllers/DeleteMessageController";
+import { CreateMessageController } from "./controllers/message/CreateMessageController";
+import { ListMessageController } from "./controllers/message/ListMessageController";
+import { DeleteMessageController } from "./controllers/message/DeleteMessageController";
 
 const router = Router();
 
@@ -13,8 +13,8 @@ router.get("/", (req: Request, res: Response) =>
 	res.json({ message: "Bem vindo a API do Dio Shopping" })
 );
 
-router.get("/message", listMessageController.handle);
-router.post("/message", createMessageController.handle);
-router.delete("/message/:id", deleteMessageController.handle);
+router.get("/messages", listMessageController.handle);
+router.post("/messages", createMessageController.handle);
+router.delete("/messages/:id", deleteMessageController.handle);
 
 export { router };
