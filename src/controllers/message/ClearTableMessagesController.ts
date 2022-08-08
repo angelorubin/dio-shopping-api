@@ -5,9 +5,9 @@ class ClearTableMessagesController {
   async handle(req: Request, res: Response) {
     const clearTableMessagesController = new ClearTableMessagesService();
 
-    const data = await clearTableMessagesController.execute();
+    const result = await clearTableMessagesController.execute();
 
-    return res.json({ message: data });
+    return res.json({ message: result });
   }
 }
 
