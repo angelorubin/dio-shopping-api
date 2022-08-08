@@ -18,6 +18,6 @@ router.get("/", (req: Request, res: Response) =>
 router.get("/messages", listMessageController.handle);
 router.post("/messages", createMessageController.handle);
 router.delete("/messages/:id", deleteMessageController.handle);
-router.delete("clear-table-messages", clearTableMessagesController);
+router.delete("clear-table-messages", clearTableMessagesController.handle);
 
 export { router };
