@@ -1,0 +1,21 @@
+"use strict";
+exports.__esModule = true;
+exports.router = void 0;
+var express_1 = require("express");
+var CreateMessageController_1 = require("./controllers/message/CreateMessageController");
+var ListMessageController_1 = require("./controllers/message/ListMessageController");
+var DeleteMessageController_1 = require("./controllers/message/DeleteMessageController");
+var ClearTableMessagesController_1 = require("./controllers/message/ClearTableMessagesController");
+var router = (0, express_1.Router)();
+exports.router = router;
+var createMessageController = new CreateMessageController_1.CreateMessageController();
+var listMessageController = new ListMessageController_1.ListMessageController();
+var deleteMessageController = new DeleteMessageController_1.DeleteMessageController();
+var clearTableMessagesController = new ClearTableMessagesController_1.ClearTableMessagesController();
+router.get("/", function (req, res) {
+    return res.json({ message: "Bem vindo a API do Dio Shopping" });
+});
+router.get("/messages", listMessageController.handle);
+router.post("/messages", createMessageController.handle);
+router["delete"]("/messages/:id", deleteMessageController.handle);
+router.get("/messages/clear-table-messages", clearTableMessagesController.handle);

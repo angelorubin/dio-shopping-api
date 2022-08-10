@@ -6,7 +6,7 @@ interface IMessage {}
 class ClearTableMessagesService {
   async execute() {
     const messageRepository = getCustomRepository(MessagesRepository);
-    const res = await messageRepository.query(`DELETE * from message`);
+    const res = await messageRepository.clear();
     return res;
   }
 }
