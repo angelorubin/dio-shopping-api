@@ -1,15 +1,15 @@
-import { v4 as uuid } from "uuid";
 import {
 	Column,
 	Entity,
 	PrimaryGeneratedColumn,
 	CreateDateColumn,
+	UpdateDateColumn,
 } from "typeorm";
 
-@Entity("products")
-class Products {
-	@PrimaryGeneratedColumn()
-	readonly id: string;
+@Entity("product")
+export class Product {
+	@PrimaryGeneratedColumn("uuid")
+	id: string;
 
 	@Column()
 	category: string;
@@ -29,14 +29,9 @@ class Products {
 	@CreateDateColumn()
 	created_at: Date;
 
-	constructor() {
-		if (!this.id) {
-			this.id = uuid();
-		}
-	}
+	@UpdateDateColumn()
+	updated_at: Date;
 }
-
-export { Products };
 
 /**
  * id_product: 1,
