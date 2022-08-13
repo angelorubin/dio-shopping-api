@@ -1,14 +1,14 @@
 import { Request, Response } from "express";
-import { ClearTableMessagesService } from "../../services/messages/ClearTableMessagesService";
+import { ClearTableMessagesService } from "../../services/message/ClearTableMessagesService";
 
 class ClearTableMessagesController {
-  async handle(req: Request, res: Response) {
-    const clearTableMessagesController = new ClearTableMessagesService();
+	async handle(req: Request, res: Response) {
+		const clearTableMessagesController = new ClearTableMessagesService();
 
-    const result = await clearTableMessagesController.execute();
+		const message = await clearTableMessagesController.execute();
 
-    return res.json({ message: result });
-  }
+		return res.json({ message });
+	}
 }
 
 export { ClearTableMessagesController };
