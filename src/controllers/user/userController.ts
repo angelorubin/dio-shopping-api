@@ -1,14 +1,38 @@
 import { Request, Response, NextFunction } from "express";
-import { createUserService } from "../../services/user/userService";
+import {
+  createUserService,
+  retrieveUserByUuidService,
+  updateUserByUuidService,
+  deleteUserByUuidService,
+} from "../../services/user/userService";
 
 const createUserController = async (
-	req: Request,
-	res: Response,
-	next: NextFunction
-) => {
-	const { firstname, lastname } = req.body;
-	const message = await createUserService({ firstname, lastname });
-	res.json({ message });
-};
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {};
 
-export { createUserController };
+const retrieveUserByUuidController = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {};
+
+const updateUserByUuidController = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {};
+
+const deleteUserByUuidController = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {};
+
+export {
+  createUserController,
+  retrieveUserByUuidController,
+  updateUserByUuidController,
+  deleteUserByUuidController,
+};
