@@ -1,4 +1,4 @@
-import { AppDataSource } from "../../database";
+import AppDataSource from "../../database";
 import { Message } from "../../entities/Message";
 import { validate } from "class-validator";
 

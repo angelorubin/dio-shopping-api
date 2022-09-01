@@ -1,0 +1,14 @@
+services:
+  my_music_db:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    volumes:
+      - my_music_data:/home/node/app
+volumes:
+  my_music_data:
+networks:
+  default:

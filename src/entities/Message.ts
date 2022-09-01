@@ -1,4 +1,4 @@
-import { AppDataSource } from "../database";
+import AppDataSource from "../database";
 import { validate } from "class-validator";
 
 import {

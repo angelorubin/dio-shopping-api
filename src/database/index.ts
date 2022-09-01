@@ -1,9 +1,12 @@
 import { DataSource } from "typeorm";
 
-export const AppDataSource = new DataSource({
-	name: "default",
-	type: "sqlite",
-	database: "src/database/database.sqlite",
+const AppDataSource = new DataSource({
+	type: "postgres",
+	host: process.env.TYPEORM_HOST,
+	port: Number(process.env.TYPEORM_PORT),
+	username: process.env.TYPEORM_USERNAME,
+	password: process.env.TYPEORM_PASSWORD,
+	database: process.env.TYPEORM_DATABASE,
 	entities: ["src/entities/*.ts"],
 	migrations: ["src/database/migrations/*.ts"],
 });
@@ -15,3 +18,5 @@ AppDataSource.initialize()
 	.catch((err) => {
 		console.error("Error during Data Source initialization", err);
 	});
+
+export default AppDataSource;
